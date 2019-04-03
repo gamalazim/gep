@@ -1,0 +1,14 @@
+Package: gep
+Type: Package
+Title: Genetic Evaluation Package
+Version: 0.1.1
+Date: 2019-1-12
+Authors@R: c(person(given="Gamal", family="Abdel-Azim", role = c("aut", "cre"), email = "gamal.azim@gmail.com"))
+Maintainer: Gamal Abdel-Azim <gamal.azim@gmail.com>
+Description: Solve massive systems of sparse mixed model equations
+Depends:
+    methods,
+    R(>= 3.0.0)
+License: GPL (>= 3)
+LazyData: TRUE
+RoxygenNote: 6.1.1
