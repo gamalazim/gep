@@ -1,5 +1,5 @@
 % File /man/mixed.Rd
-% GEP R package
+% gep R package
 % Distributed under GPL 2 or later
 
 \name{mixed}
@@ -93,4 +93,4 @@ The generic accessor functions \code{coefficients}, \code{fitted.values} and
 \code{\link{random}} for details on how to include random effects of various variance structures.
 \code{\link{ranim}} for details on how to fit a genetic model.
 \code{\link{rqtl}} for details on how to fit random effects of quantitative trait loci.
-
+}
