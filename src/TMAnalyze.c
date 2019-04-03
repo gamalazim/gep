@@ -124,7 +124,9 @@ double phi(double *mu, double *xi, int i, int k, int flag) {
     else if(k==NCATS) return (1.0 - normal_cd(xi[k-1]-mu[i]));
     else return (normal_cd(xi[k]-mu[i]) - normal_cd(xi[k-1]-mu[i]));
 
-  default: Error("unknown flag in phi()");
+  default:
+    Error("unknown flag in phi()");
+    return 0; // not needed but just to avoid compiler warning
   }
 }
 
