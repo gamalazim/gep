@@ -219,7 +219,7 @@ double normal_cd(double z)
       ======================================================
 */
 {
-  double area;
+  double area=0;
 
   if (z == 0.0)
     area = 0.5;

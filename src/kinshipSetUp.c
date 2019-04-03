@@ -8,7 +8,7 @@
 
 // createLists() is a function that constructs linked lists
 void createLists(int *sire, int *dam, int n) {
-  int i, j, tn, l, minp, maxp;
+  int i, l, minp, maxp;
   double chk;
 
   col = ivector(1,maxSz);
@@ -75,7 +75,7 @@ void fillB(int locus, int *sire, int *dam, int *gtypes, int **B, int n) {
 // Inverse of Gametic Relationship Matrix -- LOCUS number 'locus'
 void grm(int locus, int *sire, int *dam, int *gtypes, int n) {
 
-  int i, j, tn, l, k=0, minp, maxp, **B;
+  int i, k=0, minp, **B;
   double **Q;
 
   f = dvector(0,n); f[0]=0.;
@@ -131,7 +131,7 @@ void grm(int locus, int *sire, int *dam, int *gtypes, int n) {
 
 
 void List(int x, int y) {
-  int minp, maxp, j;
+  int minp, maxp;
   if(x == 0 || y == 0) return;
   if(x == y) return;
   minp = Min(x, y); maxp = Max(x, y);
@@ -148,7 +148,7 @@ void List(int x, int y) {
 }
 
 void IList(int maxp, int minp) {
-  int j;
+
   if(maxp == 0 || minp == 0) return;
   if(maxp == minp) return;
   if(icol[maxp] == 0) { icol[maxp] = minp; return; }
@@ -305,7 +305,7 @@ void Add2Inverse(int in, int s, int d, double **Q) {
 
 void UseWang(double **Q, double **D, int *TO) {
 
-  int i, j, k, dex, maxp, minp;
+  int i, j, k, dex;
   double **QI2; /* [-Qi I2]' */
   double det = det = (D[1][1]*D[2][2]) - (D[1][2]*D[2][1]);
   double **W;
@@ -512,7 +512,7 @@ void MakeUT(int n) {
 
 /* Use Mewissen's method to compute D of LDL' */
 void nrm(int *sire, int *dam, int n) {
-  int i, j, k;
+  int i;
   double *kinMLD;
 
   kinMLD = dvector(1, n); // kinship matrix local diag
@@ -656,7 +656,7 @@ void Hock(int row, int col, double val, int *index0) {
 
 // Never called
 void Print(int n) {
-  int i, j;
+  int i;
   FILE *fp;
 
   if( (fp= fopen("NRM_ilist", "w"))==NULL)
@@ -720,7 +720,7 @@ void MGSInv(int ind, int sr, int dm, double a, double b, double c) {
 }
 
 void mgs(int *sire, int *dam, int n) {
-  int maxnze, i, j, k;
+  int maxnze, i;
   double a, b, c;
 
   maxnze = 3*n; /* max number of the offdiagonal nze's */

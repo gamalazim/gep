@@ -3,7 +3,7 @@
 #include "debug.h"
 
 void OutTMatrices() {
-  int i, j, k;
+  int i, j;
   FILE *fp;
 
   if((fp=fopen("TMatrices","w"))==NULL)
@@ -269,7 +269,6 @@ void TM_SetUp(double *p) {
    */
   int i, j, k, m, ii, cc;
   double *Wb, *xi;
-  double sum, sumc;
   double *vec2alloc; /* a vector to allocate (e.g., for the Mu equation) */
 
   vec2alloc = dvector(nxi+1, SumLevels); // SumLevels = nxi + 1 + NumFactors + Cov
@@ -566,8 +565,8 @@ double Get_SolStopCrit(char *opt) {
      oldb[0 : SumLevels-1]: old set of solutions
   */
 
-  int i, from , to;
-  double num = 0, denum = 0;
+  int i=0, from=0, to=0;
+  double num = 0., denum = 0.;
 
   if(!strcmp(opt, "all")) {
     from = 1 + nxi + SumFixedLevels;

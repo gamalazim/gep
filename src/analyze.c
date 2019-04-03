@@ -264,12 +264,11 @@ void RSolutions(char *solFile, char **ff, char **funCall) {
 } //RSolutions() with file name from R
 
 void DenseVectorSolve(double *chromosome) {
-  int i,j,k;
+  int i;
 
   int flag, needed, *is;
   int iout=1, ioor=2, fnode[1], bnode[1], fx[1], fnseg,
   bnseg, feqb, irank;
-  int dt, start[3];
   int opt, avail = available;
 
   is = ivector(0, avail-1);
@@ -480,7 +479,7 @@ void MPM(int f1, int f2) {
 
 
 void MPQ(int f1, int f2, int fL1, int fL2) {
-  int i,j, k, reposi=0, reposj=0, offset, sdx;
+  int i,j, k, reposi=0, reposj=0, offset;
   double val = 1.0;
 
   offset = 0; if(FI) offset++; if(TM) offset += nxi;
@@ -751,10 +750,8 @@ void fitIntercept() {
 
 void SetUp(double *p)
 {
-  int i,j,k, l;
+  int i,j;
   double temp;
-  double qtl_c;
-  int dt, start[3];
 
   for(i=1; i<=SumLevels; i++) R[i] = 0.0;
   for(i=1; i<=SumLevels; i++) { c_val[i] = c_link[i]=0; c_col[i]= i; }
@@ -849,7 +846,7 @@ void sform(int opt, int ord) {
   /* -------------------------------------------
   Transforms the C linked lists into ija form
   -------------------------------------------   */
-  int i, j, k = CLast-1, l;
+  int i, j, k = CLast-1;
 
   k = 2*(k-ord)+ord; /* in case of full stored sparse inverse - i.e., both UT and LT stored*/
 
@@ -1084,7 +1081,7 @@ int GetRank(int *O, int id) {
 
 
 void AddInvs(double *p) {
-  int i, j, jj, k, l, i1, i2, nze, ord;
+  int i, j, jj, k, l, i1, i2, nze;
   double *dumvec, EV=p[0], alphaP = EV/p[1],
   alphaQ = EV/p[NumRandom];
 
@@ -1165,7 +1162,7 @@ void AddInvs(double *p) {
 // Model Terms - perhaps will remain in R
 // Needed to write solutions on disc
 void FillME(char *line) {
-  int i, j=0, k=1, l;
+  int j=0, k=1, l;
   while(line[j] != '\0' && line[j] != '\n') {
     l = 0;
     while(line[j] != ' ' && line[j] != '\n') {
@@ -1196,7 +1193,6 @@ void MMParms(double *RDataVec,
 
   int i, j, k;
   char line[1024];
-  int size = sizeof(line);
 
   RELF = 10.0;
   SM = 1;
