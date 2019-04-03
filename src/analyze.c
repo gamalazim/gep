@@ -751,7 +751,6 @@ void fitIntercept() {
 void SetUp(double *p)
 {
   int i,j;
-  double temp;
 
   for(i=1; i<=SumLevels; i++) R[i] = 0.0;
   for(i=1; i<=SumLevels; i++) { c_val[i] = c_link[i]=0; c_col[i]= i; }
@@ -1192,7 +1191,6 @@ void MMParms(double *RDataVec,
   */
 
   int i, j, k;
-  char line[1024];
 
   RELF = 10.0;
   SM = 1;

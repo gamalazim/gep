@@ -252,19 +252,18 @@ double cdfa(double area)
 {
   double t,zp,  c0=2.515517, c1=.802853, c2=.010328, d1=1.432788, d2=.189269, d3=.001308;
 
-  if(area == 0.5) return(0.0);
-
-  else if(area < 0.5) {
+  if(area < 0.5) {
     area = 0.5 + fabs(area-0.5);
     t = sqrt(-2*log(1-area));
     zp = t - (c0 + c1*t + c2*square(t))/(1 + d1*t + d2*square(t) + d3*cube(t));
     return(-zp);
-  }
-
-  else if (area > 0.5){
+    }
+  else if (area > 0.5) {
     t=sqrt(-2*log(1-area));
     zp = t - (c0 + c1*t + c2*square(t))/(1 + d1*t + d2*square(t) + d3*cube(t));
-    return(zp);}
+    return(zp);
+    }
+  else return(0.0);
 }
 /*******************************************************/
          /**************************/

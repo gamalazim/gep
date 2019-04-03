@@ -75,7 +75,7 @@ void fillB(int locus, int *sire, int *dam, int *gtypes, int **B, int n) {
 // Inverse of Gametic Relationship Matrix -- LOCUS number 'locus'
 void grm(int locus, int *sire, int *dam, int *gtypes, int n) {
 
-  int i, k=0, minp, **B;
+  int i, k=0, **B;
   double **Q;
 
   f = dvector(0,n); f[0]=0.;

@@ -7,3 +7,4 @@
 devtools::install_github("gamalazim/gep")
 library(gep)
 ```
+Expect a few compiler warnings due to the legacy fortran code! Feel free to adjust the code yourself, otherwise they are 'benign' warnings! 
